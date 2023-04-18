@@ -7,7 +7,7 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
 
-public class DiffieHellman {
+public class DiffieHellmanMPI {
 
     public static void main(String[] args) throws Exception {
         MPI.Init(args);
