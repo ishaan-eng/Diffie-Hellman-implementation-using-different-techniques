@@ -51,3 +51,11 @@ public class DiffieHellmanMultiThreaded {
         bobThread.join();
     }
 }
+
+/*
+
+This implementation generates two instances of the DiffieHellmanMultiThreaded class, one for Alice and one for Bob. Each instance generates a private key and a
+public key. Then, two threads are created, one for Alice and one for Bob. Each thread executes the code for generating a shared secret using the public key of the
+other party. Finally, the main thread waits for the two threads to finish using the join() method, and prints out the two shared secrets.
+The multithreading code can be used in the Diffie-Hellman key exchange code to speed up the computation of the shared secret key. 
+*/
