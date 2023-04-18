@@ -89,12 +89,9 @@ public class DiffieHellmanMPI {
 
    
    /*The steps to follow the task programming model for Diffie Hellman Secure text transfer is:
-1. Generate two large prime numbers p and q, where p is a safe prime (i.e., p = 2q + 1).
-2. Select two random numbers a and b, each less than p.
-3. Calculate A = g^a mod p and B = g^b mod p, where g is a primitive root of p.
-4. Exchange A and B between the two parties.
-5. Each party calculates the shared secret key K = B^a mod p = A^b mod p.
-6. Encrypt the plaintext message using the shared secret key K and a symmetric encryption algorithm like AES.
-7. Send the encrypted message to the other party.
-8. The other party decrypts the message using the shared secret key K and the same symmetric encryption algorithm.
+
+Two processes are created using MPI, one for each party involved in the communication. Process 0 generates Diffie-Hellman parameters and sends its public key to
+process 1. Process 1 generates its own public key using the received parameters, and sends its public key back to process 0. Both processes then generate a shared
+secret using their own private key and the received public key, and use it to encrypt and decrypt text messages.
+
    */
